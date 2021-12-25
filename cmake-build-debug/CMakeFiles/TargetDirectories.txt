@@ -1,0 +1,3 @@
+/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/cmake-build-debug/CMakeFiles/NET_Ping_Sniff.dir

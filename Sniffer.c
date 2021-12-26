@@ -15,12 +15,12 @@
 struct ipheader
 {
     unsigned char iph_ihl : 4,       //IP header length
-    iph_ver : 4;                 //IP version
+    iph_ver : 4;                     //IP version
     unsigned char iph_tos;           //Type of service
     unsigned short int iph_len;      //IP Packet length (data + header)
     unsigned short int iph_ident;    //Identification
     unsigned short int iph_flag : 3, //Fragmentation flags
-    iph_offset : 13;             //Flags offset
+    iph_offset : 13;                 //Flags offset
     unsigned char iph_ttl;           //Time to Live
     unsigned char iph_protocol;      //Protocol type
     unsigned short int iph_chksum;   //IP datagram checksum
@@ -44,26 +44,26 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *pa
         if (ip->iph_protocol == IPPROTO_ICMP)
         {
             int ip_header_len = ip->iph_ihl * 4;
-            struct icmphdr *icmph = (struct icmphdr *)(packet + sizeof(struct ethheader) + ip_header_len);
+            struct icmphdr *icmph = (struct icmphdr *)(packet + sizeof(struct ethheader) + ip_header_len); // icmphdr is struct to check the type request/reply
             printf("\nFrom: %s -> ", inet_ntoa(ip->iph_sourceip));
             printf("To: %s\n", inet_ntoa(ip->iph_destip));
             printf("ICMP code: %d\n", icmph->code);
-            //   printf("ICMP type: %d\n", icmph->type);
-            if((icmph->type) == 8) //ICMP Type 8 is request // CHECK!
+            if((icmph->type) == 8) //ICMP Type 8 is request
                 printf("ICMP Type: Request\n");
-            else if((icmph->type) == 0) //ICMP Type 0 is reply // CHECK!
+            else if((icmph->type) == 0) //ICMP Type 0 is reply
                 printf("ICMP Type: Reply\n");
         }
     }
 }
 int main()
 {
-    pcap_t *handle;
+    pcap_t *handle; //read packets from a network interface
     char errbuf[PCAP_ERRBUF_SIZE];
     struct bpf_program fp;
     char filter_exp[] = "ip proto ICMP";
     bpf_u_int32 net;
 
+    //enp0s3 for mac address in my pc , and number 1 for turn on promiscuous mode- get data from physical layer mac adr
     handle = pcap_open_live("enp0s3", BUFSIZ, 1, 1000, errbuf);
     pcap_compile(handle, &fp, filter_exp, 0, net);
     pcap_setfilter(handle, &fp);

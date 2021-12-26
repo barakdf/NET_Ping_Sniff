@@ -76,6 +76,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/Sniffer.c">
+			<Option target="NET_Ping_Sniff"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/myPing.c">
 			<Option target="NET_Ping_Sniff"/>
 		</Unit>

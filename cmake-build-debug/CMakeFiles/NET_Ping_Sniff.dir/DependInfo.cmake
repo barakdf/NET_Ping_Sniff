@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/Sniffer.c" "/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/cmake-build-debug/CMakeFiles/NET_Ping_Sniff.dir/Sniffer.c.o"
   "/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/myPing.c" "/mnt/c/Users/barak/Documents/GitHub/NET_Ping_Sniff/cmake-build-debug/CMakeFiles/NET_Ping_Sniff.dir/myPing.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

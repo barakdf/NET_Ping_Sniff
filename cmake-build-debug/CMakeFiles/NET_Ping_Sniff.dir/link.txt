@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/NET_Ping_Sniff.dir/myPing.c.o  -o NET_Ping_Sniff 
+/usr/bin/cc -g   CMakeFiles/NET_Ping_Sniff.dir/myPing.c.o CMakeFiles/NET_Ping_Sniff.dir/Sniffer.c.o  -o NET_Ping_Sniff 

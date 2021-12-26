@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/NET_Ping_Sniff.dir/Sniffer.c.o"
   "CMakeFiles/NET_Ping_Sniff.dir/myPing.c.o"
   "NET_Ping_Sniff"
   "NET_Ping_Sniff.pdb"

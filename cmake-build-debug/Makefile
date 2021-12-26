@@ -123,6 +123,33 @@ NET_Ping_Sniff/fast:
 	$(MAKE) -f CMakeFiles/NET_Ping_Sniff.dir/build.make CMakeFiles/NET_Ping_Sniff.dir/build
 .PHONY : NET_Ping_Sniff/fast
 
+Sniffer.o: Sniffer.c.o
+
+.PHONY : Sniffer.o
+
+# target to build an object file
+Sniffer.c.o:
+	$(MAKE) -f CMakeFiles/NET_Ping_Sniff.dir/build.make CMakeFiles/NET_Ping_Sniff.dir/Sniffer.c.o
+.PHONY : Sniffer.c.o
+
+Sniffer.i: Sniffer.c.i
+
+.PHONY : Sniffer.i
+
+# target to preprocess a source file
+Sniffer.c.i:
+	$(MAKE) -f CMakeFiles/NET_Ping_Sniff.dir/build.make CMakeFiles/NET_Ping_Sniff.dir/Sniffer.c.i
+.PHONY : Sniffer.c.i
+
+Sniffer.s: Sniffer.c.s
+
+.PHONY : Sniffer.s
+
+# target to generate assembly for a file
+Sniffer.c.s:
+	$(MAKE) -f CMakeFiles/NET_Ping_Sniff.dir/build.make CMakeFiles/NET_Ping_Sniff.dir/Sniffer.c.s
+.PHONY : Sniffer.c.s
+
 myPing.o: myPing.c.o
 
 .PHONY : myPing.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... NET_Ping_Sniff"
+	@echo "... Sniffer.o"
+	@echo "... Sniffer.i"
+	@echo "... Sniffer.s"
 	@echo "... myPing.o"
 	@echo "... myPing.i"
 	@echo "... myPing.s"

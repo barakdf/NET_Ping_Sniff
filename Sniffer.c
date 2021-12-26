@@ -38,22 +38,20 @@ struct ethheader
 void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *packet)
 {
     struct ethheader *eth = (struct ethheader *)packet;
-    if (ntohs(eth->ether_type) == 0x0800)
-    { // 0x0800 is IP type
+    if (ntohs(eth->ether_type) == 0x0800) //Internet Protocol version 4 (IPv4)
+    {
         struct ipheader *ip = (struct ipheader *)(packet + sizeof(struct ethheader));
         if (ip->iph_protocol == IPPROTO_ICMP)
         {
             int ip_header_len = ip->iph_ihl * 4;
             struct icmphdr *icmph = (struct icmphdr *)(packet + sizeof(struct ethheader) + ip_header_len);
-            char *ip_src = inet_ntoa(ip->iph_sourceip);
-            printf("\nFrom: %s -> ", ip_src);
-            char *ip_dest = inet_ntoa(ip->iph_destip);
-            printf("To: %s\n", ip_dest);
+            printf("\nFrom: %s -> ", inet_ntoa(ip->iph_sourceip));
+            printf("To: %s\n", inet_ntoa(ip->iph_destip));
             printf("ICMP code: %d\n", icmph->code);
             //   printf("ICMP type: %d\n", icmph->type);
-            if((icmph->type) == 8) //ICMP Type: 8 is request, 0 is reply.
+            if((icmph->type) == 8) //ICMP Type 8 is request // CHECK!
                 printf("ICMP Type: Request\n");
-            else if((icmph->type) == 0)
+            else if((icmph->type) == 0) //ICMP Type 0 is reply // CHECK!
                 printf("ICMP Type: Reply\n");
         }
     }

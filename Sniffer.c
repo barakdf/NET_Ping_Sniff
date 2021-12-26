@@ -63,7 +63,7 @@ int main()
     pcap_t *handle;
     char errbuf[PCAP_ERRBUF_SIZE];
     struct bpf_program fp;
-    char filter_exp[] = "ip proto icmp";
+    char filter_exp[] = "ip proto ICMP";
     bpf_u_int32 net;
 
     handle = pcap_open_live("enp0s3", BUFSIZ, 1, 1000, errbuf);
